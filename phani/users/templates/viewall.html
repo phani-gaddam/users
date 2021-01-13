@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'style.css' %}" rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All</title>
+</head>
+<body>
+    <div class='view'>
+        <br>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Phone Number</td>
+                <td>Address 1</td>
+                <td>Address 2</td>
+                <td>City</td>
+                <td>Zip Code</td>
+                <td>State</td>
+            </tr>
+            {% for user in user_number %}
+                <tr>
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phonenumber}}</td>
+                    <td>{{user.Address_Line_1}}</td>
+                    <td>{{user.Address_Line_2}}</td>
+                    <td>{{user.city}}</td>
+                    <td>{{user.zipcode}}</td>
+                    <td>{{user.state}}</td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'style.css' %}" rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+</head>
+<body>
+    <span>
+    <div class='center'>
+            <form action='push' method='post'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" value='Submit'>Submit</button>
+            </form>
+    </div>
+    </span>
+</body>
+</html>
